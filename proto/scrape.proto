@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "./api";
+
+service ScrapeProxy {
+  rpc SendRequest (Request) returns (Response) {}
+}
+
+message Request {
+  string url = 1;
+  string http_method = 2;
+  repeated ParseInfo parsePatterns = 3;
+}
+
+message ParseInfo {
+  ParserType type = 1;
+  string expr = 2;
+}
+
+enum ParserType {
+  HTML = 0;
+  JSON = 1;
+}
+
+message Response {
+  int32 status_code = 1;
+  bytes body = 2;
+}

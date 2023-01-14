@@ -3,9 +3,9 @@ package http_client
 import (
 	"compress/gzip"
 	"fmt"
+	http "github.com/useflyent/fhttp"
 	"io"
 	"log"
-	"net/http"
 )
 
 // Client TODO сделать тесты на клиент

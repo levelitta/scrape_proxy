@@ -1,14 +1,11 @@
 package api
 
 import (
-	"context"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestImplementation_ParseResponse(t *testing.T) {
-	ctx := context.Background()
-
 	var testData = `
 		<html>
 		window._cianConfig['header-frontend'] = (window._cianConfig['header-frontend'] || []).concat([{"result":"offers"}]);
@@ -28,7 +25,7 @@ func TestImplementation_ParseResponse(t *testing.T) {
 		},
 	}
 
-	res, err := i.ParseResponse(ctx, testData, parsePatterns)
+	res, err := i.ParseResponse(testData, parsePatterns)
 	assert.NoError(t, err)
 
 	assert.Equal(t, "[\"offers\"]", res)

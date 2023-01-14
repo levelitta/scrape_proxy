@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/grizmar-realty/scrape_proxy/internal/http_client"
 	"github.com/grizmar-realty/scrape_proxy/internal/parsers"
+	"log"
 )
 
 const CaptchaExpr = "(<form.method=.*?action=.*?id=.form_captcha.>)"
@@ -24,21 +25,31 @@ func NewImplementation(client *http_client.Client) *Implementation {
 }
 
 func (i *Implementation) SendRequest(ctx context.Context, r *Request) (*Response, error) {
+	fn := "Implementation.SendRequest"
+
+	log.Printf("%s: url: %s", fn, r.GetUrl())
+
 	request, err := http_client.NewHttpRequest(r.Url, r.HttpMethod)
 	if err != nil {
-		return nil, fmt.Errorf("SendRequest: NewHttpRequest: %w", err)
+		log.Printf("%s: NewHttpRequest: error=%s", fn, err)
+		return nil, fmt.Errorf("%s: NewHttpRequest: %w", fn, err)
 	}
 
 	resp, err := i.client.SendRequest(request)
 	if err != nil {
-		return nil, fmt.Errorf("SendRequest: client.SendRequest: %w", err)
+		log.Printf("%s: client.SendRequest: error=%s", fn, err)
+		return nil, fmt.Errorf("%s: client.SendRequest: %w", fn, err)
 	}
 
 	if err := i.CheckCaptcha(string(resp.Body)); err != nil {
 		return nil, err
 	}
 
-	body, err := i.ParseResponse(ctx, string(resp.Body), r.ParsePatterns)
+	body, err := i.ParseResponse(string(resp.Body), r.ParsePatterns)
+	if err != nil {
+		log.Printf("%s: ParseResponse: error=%s", fn, err)
+		return nil, fmt.Errorf("%s: ParseResponse: %w", fn, err)
+	}
 
 	return &Response{
 		StatusCode: int32(resp.Status),
@@ -59,7 +70,7 @@ func (i *Implementation) CheckCaptcha(data string) error {
 	return nil
 }
 
-func (i *Implementation) ParseResponse(ctx context.Context, body string, parsePatterns []*ParseInfo) (string, error) {
+func (i *Implementation) ParseResponse(body string, parsePatterns []*ParseInfo) (string, error) {
 	result := body
 
 	for _, parseInfo := range parsePatterns {

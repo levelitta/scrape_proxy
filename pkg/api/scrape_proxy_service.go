@@ -42,6 +42,7 @@ func (i *Implementation) SendRequest(ctx context.Context, r *Request) (*Response
 	}
 
 	if err := i.CheckCaptcha(string(resp.Body)); err != nil {
+		log.Printf("%s: %s", fn, err)
 		return nil, err
 	}
 

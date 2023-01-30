@@ -36,5 +36,5 @@ func TestImplementation_CheckCaptcha(t *testing.T) {
 	i := Implementation{}
 
 	err := i.CheckCaptcha(testData)
-	assert.Error(t, CaptchaError, err)
+	assert.Error(t, NewCaptchaError(), err)
 }

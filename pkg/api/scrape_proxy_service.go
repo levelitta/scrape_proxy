@@ -10,8 +10,6 @@ import (
 
 const CaptchaExpr = "(<form.method=.*?action=.*?id=.form_captcha.>)"
 
-var CaptchaError = fmt.Errorf("captcha error")
-
 type Implementation struct {
 	client *http_client.Client
 
@@ -65,7 +63,7 @@ func (i *Implementation) CheckCaptcha(data string) error {
 	}
 	_, err = captchaParser.Parse(data)
 	if err == nil {
-		return CaptchaError
+		return NewCaptchaError()
 	}
 
 	return nil

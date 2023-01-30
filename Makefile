@@ -29,4 +29,4 @@ test:
 
 .PHONY: run
 run:
-	SCRAPE_PROXY_ADDR=:9010 go run ./cmd/scrapers/main.go
+	SCRAPE_PROXY_ADDR=:9010 go run ./cmd/scrape_proxy/main.go

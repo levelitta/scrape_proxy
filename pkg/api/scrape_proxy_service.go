@@ -1,5 +1,7 @@
 package api
 
+//go:generate mockery --all --with-expecter --case snake
+
 import (
 	"context"
 	"fmt"

@@ -62,6 +62,5 @@ $ go install github.com/grizmar-realty/scrape_proxy/cmd/scrape_proxy@latest
 
 #### Run scrape_proxy
 ```bash
-$ export SCRAPE_PROXY_ADDR=:7000
 $ nohup /root/go/bin/scrape_proxy > scrape_proxy.log
 ```

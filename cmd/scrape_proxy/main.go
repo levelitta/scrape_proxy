@@ -21,7 +21,9 @@ func main() {
 		log.Panic(err)
 	}
 
-	s := grpc.NewServer()
+	s := grpc.NewServer(
+		grpc.UnaryInterceptor(api.NewAuthInterceptor(v.GetString("auth_token")).Unary()),
+	)
 	api.RegisterScrapeProxyServer(s, api.NewImplementation(http_client.NewClient()))
 
 	log.Println("Run app...")
@@ -38,6 +40,7 @@ func InitConfig() {
 
 	input := []string{
 		"addr",
+		"auth_token",
 	}
 
 	for _, in := range input {

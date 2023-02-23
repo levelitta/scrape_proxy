@@ -49,8 +49,8 @@ $ ufw default deny incoming
 $ ufw default allow outgoing
 $ ufw allow ssh
 $ ufw allow 22
-$ ufw enable
 $ ufw allow 7000
+$ ufw enable
 
 $ ufw status verbose
 ```

@@ -35,6 +35,7 @@ Add to the end of file: ```.bashrc``` this line:
 ```
 export PATH=$PATH:/usr/local/go/bin:~/go/bin
 export SCRAPE_PROXY_ADDR=:7000
+SCRAPE_PROXY_AUTH_TOKEN={token}
 ```
 
 ### Install scrape_proxy

@@ -37,9 +37,9 @@ $ vim ~/.bashrc
 ```
 
 ```
-export PATH=$PATH:/usr/local/go/bin:~/go/bin
-export SCRAPE_PROXY_ADDR=:7000
-export SCRAPE_PROXY_AUTH_TOKEN={token}
+echo 'export PATH=$PATH:/usr/local/go/bin:~/go/bin' >> ~/.bashrc
+echo 'export SCRAPE_PROXY_ADDR=:7000' >> ~/.bashrc
+echo 'export SCRAPE_PROXY_AUTH_TOKEN={token}' >> ~/.bashrc
 ```
 
 #### Network config

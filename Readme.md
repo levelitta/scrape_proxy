@@ -32,10 +32,27 @@ $ go version
 #### Export path for golang bin directory
 
 Add to the end of file: ```.bashrc``` this line:
+```bash
+$ vim ~/.bashrc
+```
+
 ```
 export PATH=$PATH:/usr/local/go/bin:~/go/bin
 export SCRAPE_PROXY_ADDR=:7000
 SCRAPE_PROXY_AUTH_TOKEN={token}
+```
+
+#### Network config
+```bash
+$ apt install ufw
+$ ufw default deny incoming
+$ ufw default allow outgoing
+$ ufw allow ssh
+$ ufw allow 22
+$ ufw enable
+$ ufw allow 7000
+
+$ ufw status verbose
 ```
 
 ### Install scrape_proxy

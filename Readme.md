@@ -50,7 +50,6 @@ echo 'export SCRAPE_PROXY_AUTH_TOKEN={token}' >> ~/.bashrc
 ```bash
 $ apt install ufw
 $ ufw default deny incoming && ufw default allow outgoing && ufw allow ssh && ufw allow 22 && ufw allow 7000 && ufw enable
-$ ufw enable
 
 $ ufw status verbose
 ```

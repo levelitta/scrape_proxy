@@ -70,3 +70,7 @@ echo 'go install github.com/grizmar-realty/scrape_proxy/cmd/scrape_proxy@latest'
 echo 'kill $(pidof scrape_proxy)' >> ~/scrape_proxy_update.sh && \
 echo 'nohup /root/go/bin/scrape_proxy > scrape_proxy.log &' >> ~/scrape_proxy_update.sh
 ```
+
+```bash
+sh scrape_proxy_update.sh
+```

@@ -26,6 +26,9 @@ generate-fast: .generate
 test:
 	go test -v ./...
 
+.PHONY: test-race
+test-race:
+	go test --race -v ./...
 
 .PHONY: run
 run:

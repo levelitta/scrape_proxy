@@ -63,3 +63,8 @@ $ go install github.com/grizmar-realty/scrape_proxy/cmd/scrape_proxy@latest
 ```bash
 $ nohup /root/go/bin/scrape_proxy > scrape_proxy.log
 ```
+
+#### Self update scrape_proxy
+```bash
+go install github.com/grizmar-realty/scrape_proxy/cmd/scrape_proxy@latest && sh ./scripts/self-update.sh
+```

@@ -8,6 +8,10 @@ import (
 	"log"
 )
 
+const (
+	defaultUserAgent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:103.0) Gecko/20100101 Firefox/103.0"
+)
+
 // Client TODO сделать тесты на клиент
 type Client struct {
 	httpClient http.Client
@@ -26,17 +30,22 @@ func NewClient() *Client {
 	}
 }
 
-func NewHttpRequest(url string, method string) (*http.Request, error) {
+func NewHttpRequest(url string, method string, headers map[string]string) (*http.Request, error) {
 	req, err := http.NewRequest(method, url, nil)
 	if err != nil {
 		return nil, fmt.Errorf("NewHttpRequest: %w", err)
 	}
 
+	for key, val := range headers {
+		req.Header.Add(key, val)
+	}
 	req.Header.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8")
 	req.Header.Add("Accept-encoding", "deflate, br")
 	req.Header.Add("Accept-language", "ru-RU,ru;q=0.5")
-	//TODO добавить разные юзер агенты
-	req.Header.Add("User-Agent", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:103.0) Gecko/20100101 Firefox/103.0")
+
+	if req.Header.Get("User-Agent") == "" {
+		req.Header.Add("User-Agent", defaultUserAgent)
+	}
 
 	return req, nil
 }

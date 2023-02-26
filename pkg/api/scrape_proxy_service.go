@@ -29,7 +29,7 @@ func (i *Implementation) SendRequest(ctx context.Context, r *Request) (*Response
 
 	log.Printf("%s: url: %s", fn, r.GetUrl())
 
-	request, err := http_client.NewHttpRequest(r.Url, r.HttpMethod)
+	request, err := http_client.NewHttpRequest(r.Url, r.HttpMethod, r.Headers)
 	if err != nil {
 		log.Printf("%s: NewHttpRequest: error=%s", fn, err)
 		return nil, fmt.Errorf("%s: NewHttpRequest: %w", fn, err)

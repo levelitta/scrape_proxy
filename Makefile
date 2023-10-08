@@ -25,10 +25,14 @@ generate-fast: .generate
 .PHONY: test
 test:
 	go test -v ./...
+	go test -v ./pkg/api
+	go test -v ./pkg/parsers
 
 .PHONY: test-race
 test-race:
 	go test --race -v ./...
+	go test --race -v ./pkg/api
+	go test --race -v ./pkg/parsers
 
 .PHONY: run
 run:

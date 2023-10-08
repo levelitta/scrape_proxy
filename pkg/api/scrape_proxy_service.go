@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/grizmar-realty/scrape_proxy/internal/http_client"
-	"github.com/grizmar-realty/scrape_proxy/internal/parsers"
+	"github.com/grizmar-realty/scrape_proxy/pkg/parsers"
 	"log"
 )
 

@@ -5,7 +5,7 @@ package api
 import (
 	"context"
 	"fmt"
-	"github.com/grizmar-realty/scrape_proxy/internal/http_client"
+	"github.com/grizmar-realty/scrape_proxy/pkg/api/http_client"
 	"github.com/grizmar-realty/scrape_proxy/pkg/parsers"
 	"log"
 )

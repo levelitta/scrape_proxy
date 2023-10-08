@@ -1,11 +1,13 @@
 module github.com/grizmar-realty/scrape_proxy
 
-go 1.19
+go 1.21.1
+
+replace github.com/grizmar-realty/scrape_proxy/pkg/parsers => ./pkg/parsers
 
 require (
+	github.com/grizmar-realty/scrape_proxy/pkg/parsers v0.0.0-00010101000000-000000000000
 	github.com/spf13/viper v1.14.0
-	github.com/stretchr/testify v1.8.1
-	github.com/tidwall/gjson v1.14.4
+	github.com/stretchr/testify v1.8.4
 	github.com/useflyent/fhttp v0.0.0-20211004035111-333f430cfbbf
 	google.golang.org/grpc v1.51.0
 	google.golang.org/protobuf v1.28.1
@@ -28,6 +30,7 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/subosito/gotenv v1.4.1 // indirect
+	github.com/tidwall/gjson v1.17.0 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.0 // indirect
 	golang.org/x/net v0.7.0 // indirect

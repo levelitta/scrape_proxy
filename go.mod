@@ -2,8 +2,6 @@ module github.com/levelitta/scrape_proxy
 
 go 1.21.1
 
-replace github.com/levelitta/scrape_proxy/pkg/parsers => ./pkg/parsers
-
 replace github.com/levelitta/scrape_proxy/pkg/api => ./pkg/api
 
 require (
@@ -17,7 +15,6 @@ require (
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/levelitta/scrape_proxy/pkg/parsers v1.1.4 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect

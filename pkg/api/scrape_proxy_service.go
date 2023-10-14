@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/levelitta/scrape_proxy/pkg/api/http_client"
-	"github.com/levelitta/scrape_proxy/pkg/parsers"
+	"github.com/levelitta/scrape_proxy/pkg/api/parsers"
 	"log"
 )
 

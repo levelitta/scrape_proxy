@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/grizmar-realty/scrape_proxy/pkg/api/http_client"
 	"github.com/levelitta/scrape_proxy/pkg/api"
+	"github.com/levelitta/scrape_proxy/pkg/api/http_client"
 	"github.com/spf13/viper"
 	"google.golang.org/grpc"
 	"log"

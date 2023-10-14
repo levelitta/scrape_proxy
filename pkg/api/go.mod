@@ -3,7 +3,7 @@ module github.com/levelitta/scrape_proxy/pkg/api
 go 1.21.1
 
 require (
-	github.com/levelitta/scrape_proxy/pkg/parsers v1.1.2
+	github.com/levelitta/scrape_proxy/pkg/parsers v1.1.4
 	github.com/stretchr/testify v1.8.4
 	github.com/useflyent/fhttp v0.0.0-20211004035111-333f430cfbbf
 	google.golang.org/grpc v1.58.2

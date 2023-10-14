@@ -7,8 +7,7 @@ replace github.com/levelitta/scrape_proxy/pkg/parsers => ./pkg/parsers
 replace github.com/levelitta/scrape_proxy/pkg/api => ./pkg/api
 
 require (
-	github.com/grizmar-realty/scrape_proxy/pkg/api v1.1.3
-	github.com/levelitta/scrape_proxy/pkg/api v1.1.2
+	github.com/levelitta/scrape_proxy/pkg/api v1.1.4
 	github.com/spf13/viper v1.14.0
 	google.golang.org/grpc v1.58.2
 )
@@ -18,7 +17,7 @@ require (
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/levelitta/scrape_proxy/pkg/parsers v1.1.2 // indirect
+	github.com/levelitta/scrape_proxy/pkg/parsers v1.1.4 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect

@@ -56,7 +56,7 @@ $ ufw status verbose
 
 ### Install scrape_proxy
 ```bash
-$ go install github.com/grizmar-realty/scrape_proxy/cmd/scrape_proxy@latest
+$ go install github.com/levelitta/scrape_proxy/cmd/scrape_proxy@latest
 ```
 
 #### Run scrape_proxy
@@ -66,7 +66,7 @@ $ nohup /root/go/bin/scrape_proxy > scrape_proxy.log
 
 #### Self update scrape_proxy
 ```bash
-echo 'go install github.com/grizmar-realty/scrape_proxy/cmd/scrape_proxy@latest' >> ~/scrape_proxy_update.sh && \
+echo 'go install github.com/levelitta/scrape_proxy/cmd/scrape_proxy@latest' >> ~/scrape_proxy_update.sh && \
 echo 'kill $(pidof scrape_proxy)' >> ~/scrape_proxy_update.sh && \
 echo 'nohup /root/go/bin/scrape_proxy > scrape_proxy.log &' >> ~/scrape_proxy_update.sh
 ```

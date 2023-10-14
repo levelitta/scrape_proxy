@@ -1,4 +1,4 @@
-module github.com/grizmar-realty/scrape_proxy/pkg/parsers
+module github.com/levelitta/scrape_proxy/pkg/parsers
 
 go 1.21.1
 

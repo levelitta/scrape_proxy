@@ -5,8 +5,8 @@ package api
 import (
 	"context"
 	"fmt"
-	"github.com/grizmar-realty/scrape_proxy/pkg/api/http_client"
-	"github.com/grizmar-realty/scrape_proxy/pkg/parsers"
+	"github.com/levelitta/scrape_proxy/pkg/api/http_client"
+	"github.com/levelitta/scrape_proxy/pkg/parsers"
 	"log"
 )
 

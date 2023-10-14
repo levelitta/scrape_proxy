@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	api "github.com/grizmar-realty/scrape_proxy/pkg/api"
+	api "github.com/levelitta/scrape_proxy/pkg/api"
 
 	mock "github.com/stretchr/testify/mock"
 )

@@ -5,7 +5,7 @@ go 1.21.1
 replace github.com/levelitta/scrape_proxy/pkg/api => ./pkg/api
 
 require (
-	github.com/levelitta/scrape_proxy/pkg/api v1.1.4
+	github.com/levelitta/scrape_proxy/pkg/api v1.2.0
 	github.com/spf13/viper v1.14.0
 	google.golang.org/grpc v1.58.2
 )

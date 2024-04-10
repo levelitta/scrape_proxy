@@ -6,6 +6,7 @@ import (
 	http "github.com/useflyent/fhttp"
 	"io"
 	"log"
+	"strings"
 )
 
 const (
@@ -30,8 +31,8 @@ func NewClient() *Client {
 	}
 }
 
-func NewHttpRequest(url string, method string, headers map[string]string) (*http.Request, error) {
-	req, err := http.NewRequest(method, url, nil)
+func NewHttpRequest(url string, method string, headers map[string]string, body string) (*http.Request, error) {
+	req, err := http.NewRequest(method, url, strings.NewReader(body))
 	if err != nil {
 		return nil, fmt.Errorf("NewHttpRequest: %w", err)
 	}

@@ -13,6 +13,7 @@ message Request {
   string http_method = 2;
   repeated ParseInfo parsePatterns = 3;
   map<string, string> headers = 4;
+  string body = 5;
 }
 
 message ParseInfo {

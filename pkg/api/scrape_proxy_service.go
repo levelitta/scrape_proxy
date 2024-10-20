@@ -28,12 +28,15 @@ func (i *Implementation) SendRequest(ctx context.Context, r *Request) (*Response
 	fn := "Implementation.SendRequest"
 
 	log.Printf("%s: url: %s", fn, r.GetUrl())
+	log.Printf("%s: body: %s", fn, r.GetBody())
 
 	request, err := http_client.NewHttpRequest(r.GetUrl(), r.GetHttpMethod(), r.GetHeaders(), r.GetBody())
 	if err != nil {
 		log.Printf("%s: NewHttpRequest: error=%s", fn, err)
 		return nil, fmt.Errorf("%s: NewHttpRequest: %w", fn, err)
 	}
+
+	log.Printf("%s: request: %v", fn, request)
 
 	resp, err := i.client.SendRequest(request)
 	if err != nil {

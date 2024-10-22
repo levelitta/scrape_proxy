@@ -91,6 +91,8 @@ func (i *Implementation) ParseResponse(body string, parsePatterns []*ParseInfo) 
 			}
 		case ParserType_JSON:
 			parser = parsers.NewJsonParser(parseInfo.GetExpr())
+		case ParserType_Base64:
+			parser = parsers.NewBase64Parser()
 		default:
 			return "", fmt.Errorf("unknown parser type")
 		}

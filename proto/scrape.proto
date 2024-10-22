@@ -24,6 +24,7 @@ message ParseInfo {
 enum ParserType {
   HTML = 0;
   JSON = 1;
+  Base64 = 2;
 }
 
 message Response {
